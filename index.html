@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bobolox Giriş</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at center, #0b0c14, #020207);
+      color: #00f0ff;
+      font-family: 'Orbitron', monospace, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Hafif yıldız efekti */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: transparent url('https://i.imgur.com/JLx9Dq0.png') repeat;
+      opacity: 0.2;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Logo alanı */
+    .logo {
+      width: 300px;
+      margin-bottom: 40px;
+      filter: drop-shadow(0 0 8px #00f0ff);
+    }
+
+    /* Form stil */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 280px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #00f0ff88;
+    }
+
+    input {
+      padding: 12px 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background: #010116;
+      color: #00f0ff;
+      box-shadow: inset 0 0 8px #00f0ff88;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      box-shadow: 0 0 12px #00ffffcc;
+      background: #001122;
+    }
+
+    button {
+      padding: 12px 0;
+      font-size: 20px;
+      font-weight: 700;
+      color: #010116;
+      background: #00f0ff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 15px #00f0ffcc;
+    }
+
+    button:hover {
+      background: #00c6cc;
+      box-shadow: 0 0 20px #00ffff;
+    }
+
+    /* Responsive */
+    @media (max-width: 400px) {
+      .logo {
+        width: 200px;
+        margin-bottom: 30px;
+      }
+      form {
+        width: 90%;
+        padding: 20px;
+      }
+      input, button {
+        font-size: 16px;
+        padding: 10px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <!-- Buraya Bobolox SVG kodu (Önceden verdiğim) yapıştır -->
+    <svg width="300" height="80" viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg" >
+      <defs>
+        <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#00f0ff"/>
+          <stop offset="100%" stop-color="#5a00a3"/>
+        </linearGradient>
+      </defs>
+      <g transform="translate(10,10)">
+        <rect width="30" height="60" rx="8" ry="8" fill="url(#grad1)" />
+        <polygon points="5,15 15,30 5,45" fill="#0ff" />
+        <polygon points="20,15 30,30 20,45" fill="#a04fff" />
+      </g>
+      <text x="60" y="50" font-family="Segoe UI, Tahoma, Geneva, Verdana, sans-serif" font-weight="700" font-size="42" fill="url(#grad1)" >
+        BOBOLOX
+      </text>
+    </svg>
+  </div>
+
+  <form id="loginForm">
+    <input type="text" placeholder="Takma Ad" required />
+    <input type="password" placeholder="Şifre" required />
+    <button type="submit">Giriş Yap</button>
+  </form>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Hoşgeldin, ' + e.target[0].value + '!');
+      // Burada yönlendirme ya da gerçek giriş işlemi yapılabilir
+    });
+  </script>
+
+</body>
+</html>
