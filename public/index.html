@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bobolox Giriş</title>
+  <style>
+    body { background: #111; color: #eee; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding: 2rem; }
+    h1 { font-weight: 700; font-size: 3rem; margin-bottom: 1rem; }
+    input, button { padding: 0.5rem 1rem; margin: 0.5rem 0; font-size: 1rem; }
+    button { cursor: pointer; background: #0ff; border: none; color: #000; font-weight: 700; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Bobolox Giriş Ekranı</h1>
+  <input id="username" placeholder="Takma Ad" /><br />
+  <input id="password" type="password" placeholder="Şifre" /><br />
+  <button onclick="girisYap()">Giriş Yap</button>
+
+  <script>
+    async function girisYap() {
+      const username = document.getElementById('username').value
+      const password = document.getElementById('password').value
+      
+      if (!username || !password) {
+        alert('Takma ad ve şifre gerekli!')
+        return
+      }
+      
+      // Burada backend'e istek atılır. Şimdilik demo.
+      alert(`Hoşgeldin, ${username}! (Demo giriş)`)
+    }
+  </script>
+</body>
+</html>
